@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>c2fc07ca-3c50-4537-b946-4df6b38a4b83</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+<GenerateProgramFile>false</GenerateProgramFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TestAsserts\**" />
+    <Content Remove="TestAsserts\**" />
+    <EmbeddedResource Remove="TestAsserts\**" />
+    <None Remove="TestAsserts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Infra\IntegrationEventLogContext.cs" />
+    <Compile Remove="Infra\IntegrationEventLogEntry.cs" />
+    <Compile Remove="testcases\Class.cs" />
+    <Compile Remove="WeatherForecast.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.1" />
+    <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="MediatR" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Serilog.Sinks.Http" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.15.0.24505">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="testcases\" />
+  </ItemGroup>
+
+
+</Project>
